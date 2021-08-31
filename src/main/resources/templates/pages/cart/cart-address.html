@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+
+<head th:replace="layouts :: header"></head>
+
+<link rel ="stylesheet"  th:href= "@{/css/registration.css}"> 
+
+<body>
+
+    <nav th:replace="layouts :: userNavBar"></nav>
+    <div class="container mt-2" >
+    
+     <h3 th:each=" payment: ${paymentSuccessful}" th:text="${payment}"></h3>
+        <h4 class="card-title mt-3 text-center">Address Details</h4>
+     
+        <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 40vw;">
+           
+            <!-- <form action="/MEDICARE/cart/order-details" method="post" > -->
+            <form action="/MEDICARE/address/save" method="post" >
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input name="doorNo" class="form-control" placeholder="Door no" type="text" oninput="this.value=this.value.replace(/[^\d]/,'')" maxlength="3">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                 </div>
+                <input name="streetName" class="form-control" placeholder="Street Name" type="text">
+                <input name="theUser" class="form-control" placeholder="" type="hidden" th:value="${session.userId}">
+            </div> <!-- form-group// -->
+                   
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="City" type="text" name="city">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="State" type="text" name="state">
+            </div> <!-- form-group// -->                                      
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Pincode" type="text" name="pincode" oninput="this.value=this.value.replace(/[^\d]/,'')" maxlength="6">
+            </div> <!-- form-group// -->                                      
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Confirm Address </button>
+            </div> <!-- form-group// -->      
+                                                                        
+        </form>
+        </article>
+        </div> <!-- card.// -->
+        
+        </div> 
+        <!--container end.//-->
+        
+       
+   
+
+</body>
+
+</html>

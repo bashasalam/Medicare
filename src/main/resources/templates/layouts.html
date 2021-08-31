@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org">
+
+<head th:fragment="header">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+     
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    	
+    	
+    <title>Medicare </title>
+</head>
+
+
+<nav th:fragment="navBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
+    <a class="navbar-brand" href="#">MEDICARE</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" th:href="@{/MEDICARE/}">Home <span class="sr-only">(current)</span></a>
+           
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="width: 50vw;"> -->
+           
+      
+          <ul class="navbar-nav">
+
+            <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+              <!-- <a class="nav-item nav-link active" th:href="@{/MEDICARE/user/logout}">Logout </a> -->
+                            <a class="nav-item nav-link" style="font-weight: 500; color:white"> Hi   <span th:text="${session.userName}">   </span></a>    
+
+            </li>
+            <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link active btn-facebook" th:href="@{/MEDICARE/cart/pastcart}"> My Orders <i class="fa fa-shopping-cart"></i> </a>
+            </li> 
+            <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link active btn-facebook" th:href="@{/MEDICARE/cart/cart}">Cart <i class="fa fa-shopping-cart">
+               <sup class="rounded" th:text="${session.noOfProductInCart}" style="border-radius:15px; color: red; background-color:yellow; margin-bottom: 5px;margin-right: 5px;margin-left: 0px;padding-left: 0px;font-size: 16px;
+               display: none;"></sup>
+              </i> </a>
+            </li> 
+
+           
+            <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link text-lg-right" th:href="@{/MEDICARE/login/new}" style="color: white;" >Login </a>
+              
+            </li>
+            <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+             
+              <a class="nav-item nav-link text-lg-right"th:href="@{/MEDICARE/register/new}" style="color: white;">Register</a>
+            </li>
+            <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link active" th:href="@{/MEDICARE/user/logout}">Logout </a>
+            </li>
+           
+          
+          
+          </ul>
+        </div>
+        </div>
+</nav>
+<nav th:fragment="registerNavBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <a class="navbar-brand" href="#">MEDICARE</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link active" th:href="@{/MEDICARE/}">Home <span class="sr-only">(current)</span></a>
+         
+          <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+          style="width: 50vw;"> -->
+         
+      </div>
+    
+        <ul class="navbar-nav">
+         
+          <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+            <a class="nav-item nav-link text-lg-right" th:href="@{/MEDICARE/login/new}" style="color: white;" >Login </a>
+            
+          </li>
+          <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+           
+            <a class="nav-item nav-link text-lg-right"th:href="@{/MEDICARE/register/new}" style="color: white;">Register</a>
+          </li>
+          <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+            <a class="nav-item nav-link active" th:href="@{/MEDICARE/user/logout}">Logout </a>
+          </li>
+           <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+            <a class="nav-item nav-link active btn-facebook" th:href="@{/MEDICARE/cart/cart}">Cart <i class="fa fa-shopping-cart"></i> </a>
+          </li> 
+        
+        </ul>
+      </div>
+</nav>
+<nav th:fragment="userNavBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
+    <a class="navbar-brand" href="#">MEDICARE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+  
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" th:href="@{/MEDICARE/}">Home <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav" >
+                <li class="nav-item active">
+                  <a class="nav-link" href=""> </a>
+                </li>
+                <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+                  <!-- <a class="nav-item nav-link active" th:href="@{/MEDICARE/user/logout}">Logout </a> -->
+                                <a class="nav-item nav-link" style="font-weight: 500; color:white"> Hi   <span th:text="${session.userName}">   </span></a>    
+
+                </li>
+               
+                <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/login/login}" >Login </a>
+                </li>
+                <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/user/logout}">Logout </a>
+                </li>
+              </ul>
+             
+        </div>
+       
+    </div>
+</nav>
+<nav th:fragment="loginNavBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <a class="navbar-brand" href="#">MEDICARE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+          
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+        style="width: 50vw;"> -->
+       
+  </div>
+      <div class="navbar-nav">
+          <a class="nav-item nav-link active" th:href="@{/MEDICARE/}">Home <span class="sr-only">(current)</span></a>
+          <ul class="navbar-nav" >
+              <li class="nav-item active">
+                <a class="nav-link" href=""> </a>
+              </li>
+             
+              <!-- <li class="nav-item" th:style="${session.userName== null} ? 'display:block' : 'display:none'">
+                <a class="nav-item nav-link active" th:href="@{/login/login}" >Login </a>
+              </li>
+              <li class="nav-item" th:style="${session.userName!= null} ? 'display:block' : 'display:none'">
+                <a class="nav-item nav-link active" th:href="@{/user/logout}">Logout </a>
+              </li> -->
+            </ul>
+           
+      </div>
+     
+  </div>
+</nav>
+<nav th:fragment="adminNavBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
+    <a class="navbar-brand" href="#">MEDICARE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" >
+           
+             
+             <!-- <a class="nav-item nav-link active" th:href="@{/admin/add-products}">Add MedicalProducts </a> -->
+
+             <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/add-madicine}">Add Medicine </a>
+                </li>
+                <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{MEDICARE/admin/manage-password}">Change Password </a>
+                </li>
+               <!-- <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/user-home}">User Home </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+              </ul>
+        </div>
+
+          <ul class="navbar-nav">
+           
+            <li class="nav-item" th:style="${session.adminName== null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/}" >Login </a>
+            </li>
+            <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
+              <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/logout}">Logout </a>
+            </li>
+          
+          </ul>
+        </div>
+  
+</nav>
+<footer th:fragment="footer" >
+<article class="bg-transparent" >  
+  <div class="row col-md-12">
+    <div class="card col-md-4" style="background-color:#007BFF;">
+<div class="card-body mr-2 p-2">
+     <h5 class="card-title align-self-center">Card title</h5>
+    </div>
+    </div>
+    <div class="card col-md-4" style="background-color:#007BFF;">
+      <div class="card-body mr-2 p-2">
+       <h5 class="card-title align-self-center">Card title</h5>
+      </div>
+
+    </div>
+    <div class="card col-md-4" style="background-color: #007BFF;">
+      <div class="card-body mr-2 p-2">
+       <h5 class="card-title align-self-center">Card title</h5>
+      </div>
+
+    </div>   
+   
+  <!-- <div class="bg-blue py-4">
+    <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021. All rights reserved.</small>
+        <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+    </div>
+</div> -->
+
+
+
+  </div>
+  <br><br>
+  </article>
+</footer>
+
+
+</html>
