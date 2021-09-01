@@ -31,7 +31,7 @@ public class CategoryController {
 		
 		cateRepo.save(category);
 		
-		return "redirect:/MEDICARE/admin";
+		return "redirect:/MEDICARE/admin/";
 	}
 	
 	@GetMapping("/delete")

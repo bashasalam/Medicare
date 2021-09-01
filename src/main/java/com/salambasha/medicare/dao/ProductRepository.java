@@ -42,8 +42,8 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	@Query(nativeQuery = true, value="UPDATE `product` SET `is_active` = ? WHERE `product_id` = ?;")
 	void enableProduct(int enableValue, long productId);
 
-	@Query(nativeQuery = true, value="SELECT * FROM product WHERE category_id=?")
-	List<Product> getProducts(long categoryId);
+	@Query(nativeQuery = true, value="SELECT * FROM product WHERE category_id=? AND is_active=?")
+	List<Product> getProducts(long categoryId, int isActive);
 
 //	@Query(nativeQuery = true, value="select p.product_name, p.product_id from product p where p.product_name LIKE %:enteredKey%")
 //	List<Product> getKeyProducts(String enteredKey);

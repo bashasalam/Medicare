@@ -67,9 +67,9 @@ prorepo.updateProduct(productName,brandName, description, price,offer,offerPrice
 		
 	}
 
-	public List<Product> getProducts(long categoryId) {
+	public List<Product> getProducts(long categoryId, int isActive) {
 
-		List<Product> products = prorepo.getProducts(categoryId);
+		List<Product> products = prorepo.getProducts(categoryId,isActive);
 		
 		return products;
 	}
