@@ -28,7 +28,8 @@ public class HomeController {
     @GetMapping("/")
 	public String showHome(Model model) {
     	long categoryId = 1;
-    	List<Product> products = productService.getProducts(categoryId);
+    	int isActive = 1;
+    	List<Product> products = productService.getProducts(categoryId,isActive);
     	List<Category> categories = cateRepo.findAll(); 
 			model.addAttribute("categoryList", categories);
 			model.addAttribute("productList", products);
@@ -43,8 +44,8 @@ public String showMadicines(@RequestParam("category_id") long categoryId,Model m
 	//System.out.println(categoryId);
 	
 	//long category_id = 2;
-	
-	List<Product> products = productService.getProducts(categoryId);
+	int isActive = 1;
+	List<Product> products = productService.getProducts(categoryId,isActive);
 	
 	System.out.print(products);
 	

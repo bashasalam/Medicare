@@ -26,7 +26,20 @@
     	
     	
     <title>Medicare </title>
+
+    <!-- <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* background-color: red; */
+        color: white;
+        text-align: center;
+      }
+      </style> -->
 </head>
+
 
 
 <nav th:fragment="navBar" class="navbar navbar-expand-lg navbar-dark bg-primary" >
@@ -199,9 +212,9 @@
                 <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
                   <a class="nav-item nav-link active" th:href="@{MEDICARE/admin/manage-password}">Change Password </a>
                 </li>
-               <!-- <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
-                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/admin/user-home}">User Home </a>
-                </li> -->
+               <li class="nav-item" th:style="${session.adminName!= null} ? 'display:block' : 'display:none'">
+                  <a class="nav-item nav-link active" th:href="@{/MEDICARE/}">User Home </a>
+                </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#">Disabled</a>
                 </li> -->
@@ -221,23 +234,28 @@
         </div>
   
 </nav>
-<footer th:fragment="footer" >
-<article class="bg-transparent" >  
+<footer th:fragment="footer" class="footer" >
+<article   style="background-color:#0DA49F; color: white  ;">  
   <div class="row col-md-12">
-    <div class="card col-md-4" style="background-color:#007BFF;">
+    <div class="card col-md-4" style="background-color:#0DA49F; color: white  ;">
 <div class="card-body mr-2 p-2">
-     <h5 class="card-title align-self-center">Card title</h5>
+     <h5 class="card-title align-self-center">About Us</h5>
     </div>
     </div>
-    <div class="card col-md-4" style="background-color:#007BFF;">
+    <div class="card col-md-4" style="background-color:#0DA49F; color: white  ;">
       <div class="card-body mr-2 p-2">
-       <h5 class="card-title align-self-center">Card title</h5>
+       <h5 class="card-title align-self-center">Developer Details</h5>
+       <p>SALAM BASHA A</p>
+       <p>FULL STACK JAVA DEVELOPER</p>
+
+
       </div>
 
     </div>
-    <div class="card col-md-4" style="background-color: #007BFF;">
+    <div class="card col-md-4" style="background-color:#0DA49F; color: white  ;">
       <div class="card-body mr-2 p-2">
-       <h5 class="card-title align-self-center">Card title</h5>
+       <h5 class="card-title align-self-center">Copyright</h5>
+       <p>Copyright © 2021-2025 com.salambasha.medicare All rights reserved</p>
       </div>
 
     </div>   
@@ -251,7 +269,7 @@
 
 
   </div>
-  <br><br>
+ 
   </article>
 </footer>
 
