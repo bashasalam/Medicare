@@ -66,7 +66,7 @@
 		      <groupId>junit</groupId>
 		      <artifactId>junit</artifactId>
 		      <version>3.8.1</version>
-		      <scope>test</scope>
+		      <scope>runtime</scope>
 		    </dependency>
 		    	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 			<dependency>
@@ -81,12 +81,19 @@
 	    <version>2.6</version>
 	</dependency>
 	
+	
+			<dependency>
+			    <groupId>junit</groupId>
+			    <artifactId>junit-dep</artifactId>
+			    <version>4.11</version>
+			</dependency>
+	
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<!-- 	<dependency>
+	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>6.4</version>
-	</dependency>  -->
+	</dependency>  
 	
 	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 	<dependency>
@@ -118,6 +125,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+      
+  
+			
+			
 		</plugins>
 		
 		
