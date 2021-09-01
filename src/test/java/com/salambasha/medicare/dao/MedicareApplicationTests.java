@@ -10,12 +10,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import com.salambasha.medicare.entities.Category;
+import com.salambasha.medicare.entities.User;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
 class MedicareApplicationTests {
 	@Autowired
 	CategoryRepository cateRepo;
+	
+	@Autowired
+	UserRepository userRepo;
 
 	@Test
 public void ifNewCategoryAdded_thenSuccess() {
@@ -27,5 +31,15 @@ public void ifNewCategoryAdded_thenSuccess() {
 		//assertEquals(9,cateRepo.findAll().size()); 
 		
 	}
+	
+	@Test
+	public void ifUserAdded_thenSucces() {
+		
+		User user = new User("testUser@gmai.com","TestUser",978451232,"test" );
+		
+		userRepo.save(user);
+		
+	}
+	
 
 }
