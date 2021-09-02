@@ -66,7 +66,7 @@
 		      <groupId>junit</groupId>
 		      <artifactId>junit</artifactId>
 		      <version>3.8.1</version>
-		      <scope>runtime</scope>
+		      <scope>test</scope>
 		    </dependency>
 		    	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 			<dependency>
@@ -89,11 +89,11 @@
 			</dependency>
 	
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-	<dependency>
+	<!-- <dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>6.4</version>
-	</dependency>  
+	</dependency>   -->
 	
 	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 	<dependency>
@@ -129,9 +129,9 @@
 			</plugin>
 
 			<plugin>
-				<groupId>com.spotify</groupId>
+				 <groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.0</version>
+				<version>1.4.0</version> 
 			     <executions>
 					<execution>
 						<id>default</id>
