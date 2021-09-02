@@ -115,6 +115,14 @@
 	    <artifactId>poi-ooxml-schemas</artifactId>
 	    <version>4.1.2</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin -->
+<dependency>
+    <groupId>com.spotify</groupId>
+    <artifactId>dockerfile-maven-plugin</artifactId>
+    <version>1.4.10</version>
+</dependency>
+	
 
 		
 	</dependencies>
