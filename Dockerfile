@@ -11,5 +11,6 @@ WORKDIR /usr/local/bin/
 ADD target/Medicare-app.jar .
 
 # CMD ["/bin/bash"]
+ 
 
 ENTRYPOINT ["java", "-jar", "Medicare-app.jar"]
