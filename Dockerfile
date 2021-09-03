@@ -1,16 +1,25 @@
-FROM ubuntu:latest
 
-LABEL org.salambasha.image.authors="mitbashaee@gmail.com"
 
-RUN apt-get update && apt-get install -y openjdk-8-jdk
+FROM openjdk:8-jdk-alpine
 
-#ENV version=docker
+# Add Maintainer Info
+MAINTAINER SALAM BASHA A <mitbashaeee@gmail.com>
 
-WORKDIR /usr/local/bin/
+# Add a volume pointing to /tmp
+VOLUME /tmp
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# The application's jar file
+#ARG JAR_FILE=target/Medicare-0.0.1-SNAPSHOT.jar
 
 ADD target/Medicare-app.jar .
 
-# CMD ["/bin/bash"]
- 
+#CMD ["/bin/bash"]
 
-ENTRYPOINT ["java", "-jar", "Medicare-app.jar"]
+# Add the application's jar to the container
+#ADD ${JAR_FILE} Medicare.jar
+
+# Run the jar file 
+ENTRYPOINT ["java","-jar","/Medicare.jar"]
