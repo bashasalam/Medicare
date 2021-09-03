@@ -22,7 +22,9 @@ class MedicareApplicationTests {
 	UserRepository userRepo;
 
 	@Test
-public void ifNewCategoryAdded_thenSuccess() {
+public void ifNewCategoryAdded_thenSuccess() throws InterruptedException {
+		
+		Thread.sleep(1000);
 		
 		Category category = new Category("Test Category");
 		
@@ -32,8 +34,11 @@ public void ifNewCategoryAdded_thenSuccess() {
 		
 	}
 	
+	
 	@Test
-	public void ifUserAdded_thenSucces() {
+	public void ifUserAdded_thenSucces() throws InterruptedException {
+		
+		Thread.sleep(1000);
 		
 		User user = new User("testUser@gmai.com","TestUser",978451232,"test" );
 		
