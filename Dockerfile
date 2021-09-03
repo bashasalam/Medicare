@@ -22,4 +22,4 @@ ADD target/Medicare-app.jar .
 #ADD ${JAR_FILE} Medicare.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-jar","/Medicare.jar"]
+ENTRYPOINT ["java","-jar","Medicare.jar"]
