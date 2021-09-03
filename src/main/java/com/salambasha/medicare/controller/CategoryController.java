@@ -61,7 +61,7 @@ public class CategoryController {
 	public String updateCategory(@RequestParam("categoryName") String categoryName, @RequestParam("categoryId") long categoryId, Model model) {
 		
 		categoryService.updateCategory(categoryName,categoryId);
-		System.out.println("updated");
+		//System.outprintln("updated");
 		
 		return "redirect:/MEDICARE/admin/";
 		

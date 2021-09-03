@@ -59,7 +59,7 @@ public class AdminController {
 //		session.setAttribute("adminName", adminName);
 		Admin admin = adminService.loginCheck(adminName,password);
 		
-		//System.out.print(admin.getadminName());
+		////System.out.print(admin.getadminName());
 		if(admin != null) {
 				session.setAttribute("adminName", admin.getUserName());
 			
@@ -156,7 +156,7 @@ public class AdminController {
 		
 		List<Product> disabledproducts = productService.findDisabledProducts(value);
 		model.addAttribute("disabledProductList", disabledproducts );
-		System.out.println(session.getAttribute("adminName"));
+		//System.out.println(session.getAttribute("adminName"));
 		
 		model.addAttribute("engagedCategories", engagedCategories);
 		//categoryIdlist

@@ -77,11 +77,11 @@ public class UserController {
 //		  		HttpSession session=request.getSession();
 //		  		session.setAttribute("userName", userName);
 		 long existingCartId;
-		 System.out.println(email);
-		 System.out.println(password); 
-		System.out.println(session.getAttribute("theCart"));
+		 //System.out.println(email);
+		 //System.out.println(password); 
+		//System.out.println(session.getAttribute("theCart"));
 		  		User user = userService.loginCheck(email,password);
-		  		System.out.print(user);
+		  		//System.out.print(user);
 		  		
 		  		if(session.getAttribute("theCart")!=null) {
 		            existingCartId = (long)session.getAttribute("theCart");
@@ -104,7 +104,7 @@ public class UserController {
 		        	   session.setAttribute("userName", user.getFullName());
 			            session.setAttribute("userId", user.getUserId());
 			            session.setAttribute("theCart", existingCart.getCartId());
-			            System.out.println("Working here user has cart already");
+			            //System.out.println("Working here user has cart already");
 			            
 			            long user_id = user.getUserId();
 			            long cart_id= existingCart.getCartId();
@@ -122,7 +122,7 @@ public class UserController {
 			            session.setAttribute("userId", user.getUserId());
 			            Cart cart = cartService.findSingleCart(user,isActive);
 				  		session.setAttribute("theCart", cart.getCartId());
-				  		System.out.println("Working here new cart careated");
+				  		//System.out.println("Working here new cart careated");
 				  		
 				  		long user_id = user.getUserId();
 			            long cart_id= cart.getCartId();
@@ -130,7 +130,7 @@ public class UserController {
 			            
 			            
 						List<ProductCount> productsInCart = productCountController.findProductCounts(user_id,cart_id);
-			           // System.out.println("check for active cart");
+			           // //System.out.println("check for active cart");
 			            
 			           // Cart cart = cartService.findByid()
 					int noOfProductInCart = 	productsInCart.size();
@@ -143,10 +143,10 @@ public class UserController {
 		  					  		
 		  			int isActive = 1;
 		 	  		Cart exisTingCart = cartService.findSingleCart(user,isActive);
-		 	  		System.out.println("Working here trying to find existing cart");
+		 	  		//System.out.println("Working here trying to find existing cart");
 		  		
 		  		if(exisTingCart==null) {
-		  			System.out.println("confirmed no existing cart");
+		  			//System.out.println("confirmed no existing cart");
 		  			cartService.save(user,isActive);
 		  			Cart newCart = cartService.findSingleCart(user,isActive);
 		  			session.setAttribute("theCart", newCart.getCartId());
@@ -163,7 +163,7 @@ public class UserController {
 		            
 		            
 					List<ProductCount> productsInCart = productCountController.findProductCounts(user_id,cart_id);
-		           // System.out.println("check for active cart");
+		           // //System.out.println("check for active cart");
 		            
 		           // Cart cart = cartService.findByid()
 				int noOfProductInCart = 	productsInCart.size();

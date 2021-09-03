@@ -41,12 +41,12 @@ public class AddressController {
 		   // 2021-03-24 16:48:05.591
 		  Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		  
-		  System.out.println(timestamp);
+		  //System.out.println(timestamp);
 		  
 		for (ProductCount productCount : productCounts) {
 			
-			 System.out.println("working here");
-			 System.out.println(productCount);
+			 //System.out.println("working here");
+			 //System.out.println(productCount);
 		//	productCount.setPurchaseTime(timestamp);
 			 long countTableId = productCount.getCountTableId();
 			 

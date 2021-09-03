@@ -165,7 +165,7 @@
 		</plugins>
 		
 		
-		<finalName>Medicare-app-updated</finalName>
+		<finalName>Medicare-app</finalName>
 	</build>
 	<repositories>
 		<repository>

@@ -33,7 +33,7 @@ public class HomeController {
     	List<Category> categories = cateRepo.findAll(); 
 			model.addAttribute("categoryList", categories);
 			model.addAttribute("productList", products);
-			System.out.print(products);
+			//System.out.print(products);
 		return "pages/home";
 	}
     
@@ -41,13 +41,13 @@ public class HomeController {
 public String showMadicines(@RequestParam("category_id") long categoryId,Model model) {
 	
 	//categoryId = (long)categoryId;
-	//System.out.println(categoryId);
+	////System.out.println(categoryId);
 	
 	//long category_id = 2;
 	int isActive = 1;
 	List<Product> products = productService.getProducts(categoryId,isActive);
 	
-	System.out.print(products);
+	//System.out.print(products);
 	
 	model.addAttribute("productList", products);
 	
@@ -64,14 +64,14 @@ public String showMadicines(@RequestParam("category_id") long categoryId,Model m
 public String showMadicineList(@RequestParam("enteredKey") String enteredKey,Model model) {
 	
 	//categoryId = (long)categoryId;
-	//System.out.println(categoryId);
+	////System.out.println(categoryId);
 	
 	//long category_id = 2;
 	try {
 	
 	List<Product> products = productService.getKeyProducts(enteredKey);
 	
-	System.out.print(products);
+	//System.out.print(products);
 	
 	model.addAttribute("keyProductList", products);
 	

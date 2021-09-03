@@ -45,7 +45,7 @@ public class ProductController {
 	public String productDetailsShow(@PathVariable long productId, Model model,ProductCount productCount) {
 		//long product_id = productId;
 		Product product = productService.findById(productId);
-		////System.out.print(product);
+		//////System.out.print(product);
 		Category category = product.getTheCategory();
 		model.addAttribute("CategoryName",category.getCategoryName());
 		model.addAttribute("showProduct", product);
@@ -56,7 +56,7 @@ public class ProductController {
 	@GetMapping("")
 	public String editProductPage(@RequestParam long editId, Model model) {
 	Product product = productService.findById(editId);
-	////System.out.print(product);
+	//////System.out.print(product);
 	model.addAttribute("editProduct", product);
 	List<Category> categories = cateRepo.findAll();
 	model.addAttribute("categoryList", categories);
@@ -78,7 +78,7 @@ public class ProductController {
 		productService.disableProduct(value,disableId);	 
 		
 		
-		////System.out.print(disabledproducts);
+		//////System.out.print(disabledproducts);
 		
 		return "redirect:/MEDICARE/admin/";
 	}
@@ -88,7 +88,7 @@ public class ProductController {
 		productService.deleteProduct(deleteId);	 
 		
 		
-		////System.out.print(disabledproducts);
+		//////System.out.print(disabledproducts);
 		
 		return "redirect:/MEDICARE/admin/";
 	}
@@ -103,7 +103,7 @@ public class ProductController {
 		
 		 double offerPrice = Math.round(offerPricewor * 100D) / 100D;
 
-		//System.out.println(offerPrice);
+		////System.out.println(offerPrice);
 		 StringBuilder fileName = new StringBuilder();
 		 StringBuilder fileName1 = new StringBuilder();
 		 StringBuilder fileName2 = new StringBuilder();
@@ -143,13 +143,13 @@ public class ProductController {
 		  image2 =  "uploads/" + image2;
 		  image3=  "uploads/" + image3;
 		
-		//System.out.println("Working here4");
+		////System.out.println("Working here4");
 		  		
 		   if(productService.addProduct(productName,brandName,description,price,offer,offerPrice,theCategory,quantity,image,image1,image2,image3)) {
-			   //System.out.println("Working here5");
+			   ////System.out.println("Working here5");
 			   return "redirect:/MEDICARE/admin/" ;
 		   }else {
-			   //System.out.println("Working here6");
+			   ////System.out.println("Working here6");
 			   return "pages/products/addd-madicine";
 		   }
 	}
@@ -203,7 +203,7 @@ public class ProductController {
 		  image2 =  "uploads/" + image2;
 		  image3=  "uploads/" + image3;
 		
-		//System.out.println("Working here4");
+		////System.out.println("Working here4");
 		productService.updateProduct(productName,brandName,description,price,offer,offerPrice,theCategory,quantity,image,image1,image2,image3,productId);
 		return "redirect:/MEDICARE/admin/" ;
 		 

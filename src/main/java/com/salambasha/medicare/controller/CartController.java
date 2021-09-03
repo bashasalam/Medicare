@@ -85,13 +85,13 @@ public class CartController {
 		
 
 		Cart cart = cartService.findByid(theCart);
-		System.out.println(cart.getCartId());
-		System.out.println(cart);
+		//System.outprintln(cart.getCartId());
+		//System.outprintln(cart);
 		
 		int isActive = cart.getIsActive();
-		System.out.println(isActive);
-		System.out.println(theUser);
-		System.out.println(theCart);
+		//System.outprintln(isActive);
+		//System.outprintln(theUser);
+		//System.outprintln(theCart);
 		 
 		if(isActive==1) {
 		
@@ -101,7 +101,7 @@ public class CartController {
 		if((productCounts==null)||(productCounts.isEmpty())) {
 			model.addAttribute("cartEmpty", "Your Cart is Empty");
 			model.addAttribute("paymentCardFormData", paymentCard);
-			System.out.println("Empty model attribute added");
+			//System.outprintln("Empty model attribute added");
 			
 			return "pages/cart/order-summary";
 			
@@ -142,7 +142,7 @@ public class CartController {
 			 model.addAttribute("sumTotal", Total);
 			 model.addAttribute("paymentCardFormData", paymentCard);
 			 
-			 System.out.println("model attribute added");
+			 //System.outprintln("model attribute added");
 		
 		return "pages/cart/order-summary";
 		}
@@ -151,7 +151,7 @@ public class CartController {
 		
 		 model.addAttribute("paymentCardFormData", paymentCard);
 		model.addAttribute("cartEmpty", "Your Cart is Empty");
-		System.out.println("Empty model attribute added");
+		//System.outprintln("Empty model attribute added");
 		
 		return "pages/cart/order-summary";
 		
@@ -181,10 +181,10 @@ public class CartController {
 			
 		long theCart1 = cart.getCartId();
 			
-			System.out.println("cart is is "+ theCart1);
+			//System.outprintln("cart is is "+ theCart1);
 			if(exitingProductCount== null) {
 				
-					System.out.println("inside if");
+					//System.outprintln("inside if");
 					
 					Product savingProduct = productService.findById(productId);
 					
@@ -204,7 +204,7 @@ public class CartController {
 					
 			}else {
 								
-				System.out.println("inside else");
+				//System.outprintln("inside else");
 				long cartId = cart.getCartId();
 				Product savingProduct = productService.findById(productId);
 				
@@ -222,7 +222,7 @@ public class CartController {
 			
 				
 		long cartId = cart.getCartId();
-		System.out.println("cart id is" +cartId);
+		//System.outprintln("cart id is" +cartId);
 	
 		
 		 List<ProductCount> productCounts = productCountController.findProducts(theCart,theUser);
@@ -255,13 +255,13 @@ public class CartController {
 		 }
 		 
 		 double Total = Math.round(Totalwor * 100D) / 100D;
-		 System.out.println("The total is " + Total);
+		 //System.outprintln("The total is " + Total);
 		 
 		 
 		 
-		 System.out.print( "Product price list is"+priceList);
+		 //System.outprint( "Product price list is"+priceList);
 
-	System.out.print( "Product Count list is"+productCounts);
+	//System.outprint( "Product Count list is"+productCounts);
 //	model.addAttribute("priceList", priceList);
 	 model.addAttribute("productCountList", productCounts);	
 	 model.addAttribute("productList", productList);	
@@ -356,13 +356,13 @@ session.setAttribute("theCart", cart.getCartId());
 	 }
 	 
 	 double Total = Math.round(Totalwor * 100D) / 100D;
-	 System.out.println("The total is " + Total);
+	 //System.outprintln("The total is " + Total);
 	 
 	 
 	 
-	 System.out.print( "Product price list is"+priceList);
+	 //System.outprint( "Product price list is"+priceList);
 
-System.out.print( "Product Count list is"+productCounts);
+//System.outprint( "Product Count list is"+productCounts);
 //model.addAttribute("priceList", priceList);
 model.addAttribute("productCountList", productCounts);	
 model.addAttribute("productList", productList);	
@@ -439,7 +439,7 @@ session.setAttribute("theCart", cart.getCartId());
 //		
 //		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 //		   LocalDateTime now = LocalDateTime.now();
-//		   System.out.println(dtf.format(now));
+//		   //System.outprintln(dtf.format(now));
 		 
 		   // 2021-03-24 16:48:05.591
 		//   Timestamp timestamp = new Timestamp(System.currentTimeMillis());
